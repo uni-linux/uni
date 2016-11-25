@@ -15,12 +15,18 @@ fi
 . /usr/share/uni/src/$operating_system/update.sh
 # Include Upgrade function
 . /usr/share/uni/src/$operating_system/upgrade.sh
+# Include Add function to add repositories
+. /usr/share/uni/src/$operating_system/add.sh
+# Include Install function
+. /usr/share/uni/src/$operating_system/install.sh
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
     update | u) update;;
     upgrade | up) upgrade;;
     upgrade-me | up-me) upgradeUni;;
+    add | a) repo=$2 add;;
+    install | i) package=$2 install;;
     --version | -v) echo 'UNI v'$uni_version;;
     *) echo "The '$1' argument doesn't exists. Beep..."; exit 0;;
   esac; shift; shift
