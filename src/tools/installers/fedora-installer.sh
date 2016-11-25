@@ -10,7 +10,7 @@ function installer {
   unzip -q uni-pack
   rm -f uni-pack
   sudo rm -rf /usr/share/uni/
-  mv uni-master uni/
+  mv uni-master/ uni/
   sudo mv -fu uni/ /usr/share/
   touch uni.sh
   uniBIN="#!/bin/bash\n. /usr/share/uni/uni"
