@@ -7,9 +7,9 @@ A universal package manager interface for Linux distributions.
 
 **Ubuntu** and based distributions:
 ```shell
-wget -O upm https://git.io/v1U3P && chmod +x upm && ./upm && rm upm
+wget -O upm https://git.io/v1UKq && chmod +x upm && ./upm && rm upm
 ```
 **Fedora** ( supports only dnf for now ):
 ```shell
-wget -O upm https://git.io/v1UrS && chmod +x upm && ./upm && rm upm
+wget -O upm https://git.io/v1UKO && chmod +x upm && ./upm && rm upm
 ```
