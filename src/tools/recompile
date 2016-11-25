@@ -1,2 +1,7 @@
 #!/bin/bash
+touch uni.sh
+uniBIN="#!/bin/bash\n. /usr/share/uni/uni"
+printf "$uniBIN" > uni.sh
+chmod +x uni.sh
+sudo mv -fu uni.sh /usr/bin/uni
 sudo cp ../../../uni/ /usr/share/ -rf
