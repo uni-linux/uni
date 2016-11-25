@@ -45,3 +45,9 @@ sudo dnf autoremove -y
 
 - [English](https://github.com/daltonmenezes/uni/blob/master/docs/en/API.md)
 - Português (Em breve)
+
+# Contributing
+
+I've created a 'recompiler' tool to help us to test locally using uni command on terminal normally during the development.
+
+[So, let's check the contributing guide here](https://github.com/daltonmenezes/uni/blob/master/docs/en/CONTRIBUTING.md).
