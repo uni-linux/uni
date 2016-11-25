@@ -1,7 +1,7 @@
 # UNI :rocket:
 A universal package manager interface for Linux distributions.
 
-[![version](https://img.shields.io/badge/uni-v.0.0.1-blue.svg)]()
+[![version](https://img.shields.io/badge/uni-v.0.0.1-blue.svg)](#)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
 
 # Why
