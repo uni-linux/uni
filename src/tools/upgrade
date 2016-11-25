@@ -1,7 +1,7 @@
 #!/bin/bash
 function upgradeUni {
   version_from_github=`wget -qO- https://git.io/v1JFY`
-  declare -i  version_without_dots_from_github="${get_version_from_github//'.'}"
+  declare -i version_without_dots_from_github="${version_from_github//'.'}"
 
   printf "Looking for a newest version...\n"
 
