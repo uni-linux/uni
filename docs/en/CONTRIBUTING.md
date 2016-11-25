@@ -14,8 +14,7 @@ So, let's go:
 
 - Fork it!
 - Create your feature branch: git checkout -b my-new-feature
-- Test your changes using the recompile tool.
-    Very simple to use that. Just go on terminal to src/tools/ and execute the recompile (eg. ./recompile). Your changes will be available to use and test locally using uni.
+- Test your changes using the **recompile tool**. Very simple to use that. Just go on terminal to src/tools/ and execute the recompiler (eg. ./recompile). Your changes will be available to use and test locally using uni command.
 - Commit your changes: git commit -m 'Add some feature'
 - Push to the branch: git push origin my-new-feature
 - Send your pull request.
