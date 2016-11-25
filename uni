@@ -1,0 +1,27 @@
+#!/bin/bash
+operating_system=`cat /etc/*release | grep -oP '(?<=^ID=)(.*)'`
+operating_system_based=`cat /etc/*release | grep -oP '(?<=^ID_LIKE)(.*)'`
+
+uni_version=`cat /usr/share/uni/version.txt`
+declare -i version_without_dots="${uni_version//'.'}"
+
+if [ "$operating_system_based" == "ubuntu" ]; then
+    operating_system='ubuntu'
+fi
+
+# Include UNI Upgrade function
+. /usr/share/uni/src/tools/upgrade
+# Include Update function
+. /usr/share/uni/src/$operating_system/update.sh
+# Include Upgrade function
+. /usr/share/uni/src/$operating_system/upgrade.sh
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    update | u) update;;
+    upgrade | up) upgrade;;
+    upgrade-me | up-me) upgradeUni;;
+    --version | -v) echo 'UNI v'$uni_version;;
+    *) echo "The '$1' argument doesn't exists. Beep..."; exit 0;;
+  esac; shift; shift
+done
