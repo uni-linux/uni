@@ -26,7 +26,7 @@ function installer {
   chmod +x uni.sh
   sudo mv -fu uni.sh /usr/bin/uni
 
-  printf "Done. Type uni -v\nThe output must be the UNI version.\nIf you don't see it, try to restart your terminal and try it again."
+  printf "Done. Type uni -v\nThe output must be the UNI version.\nIf you don't see it, try to restart your terminal and try it again.\n"
 }
 
 if [[ ! -z $has_unzip ]]; then
