@@ -1,6 +1,9 @@
 # UNI :rocket:
 A universal package manager interface for Linux distributions.
 
+[![version](https://img.shields.io/badge/uni-v.0.0.1-blue.svg)]()
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
+
 # Why
 
 Many times you spend a lot of time learning a new package manager when you need to use a different distribution. And regardless of this problem, many commands require the execution of another, such as when you add a new repository in Ubuntu and then need to use apt-get update. If we need to do this, why when we add a repository this is no automatically done? Thinking about all these things I've decided to create UNI and automate these tasks and help people who need to migrate from one distribution to another but feel they could spend their time on other things instead of learning a new package manager whenever that happens.
