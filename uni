@@ -1,6 +1,6 @@
 #!/bin/bash
 operating_system=`cat /etc/os-release | grep -oP '(?<=^ID=)(.*)'`
-operating_system_based=`cat /etc/os-release | grep -oP '(?<=^ID_LIKE)(.*)'`
+operating_system_based=`cat /etc/os-release | grep -oP '(?<=^ID_LIKE=)(.*)'`
 
 uni_version=`cat /usr/share/uni/version.txt`
 declare -i version_without_dots="${uni_version//'.'}"
