@@ -23,6 +23,7 @@ function installer {
   sudo touch /usr/bin/uni
   uniBIN="#!/bin/bash\n. /usr/share/uni/uni"
   sudo printf "$uniBIN" > /usr/bin/uni
+  sudo chmod +x /usr/bin/uni
 
   printf "Done. Type uni -v\nThe output must be the UNI version.\nIf you don't see it, try to restart your terminal and try it again."
 }
