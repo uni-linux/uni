@@ -12,7 +12,7 @@ Many times you spend a lot of time learning a new package manager when you need 
 
 the goal is make an easy interface that abstracts repetitive commands related to package management. Join tasks that require the execution of others without spending time typing one by one. Make it easy to work between different distributions by always using the same UNI commands regardless of the distribution you are using.
 
-## Installation
+# Installation
 
 **Ubuntu** and based distributions:
 ```shell
