@@ -30,10 +30,10 @@ wget -O upm https://git.io/v1UKO && chmod +x upm && ./upm && rm upm
 
 This abstracts the following commands on **Ubuntu**:
 ```shell
-apt-get update
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get autoremove -y
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo apt-get autoremove -y
 ```
 This abstracts the following commands on **Fedora**:
 ```shell
