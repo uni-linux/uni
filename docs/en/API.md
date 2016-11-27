@@ -1,6 +1,8 @@
 # API
 
-This section shows the commands available at this moment for UNI. You can use them in the same way in all distributions supported by UNI.
+This section shows the commands available at this moment for UNI. You can use them in the same way in all distributions supported by UNI. 
+
+All commands uses `-y` by default, so you don't need to put this when you typing UNI commands. If you want to know what each UNI command do internally you can see it in [here](https://github.com/daltonmenezes/uni/tree/master/src). 
 
 # UNI
 
