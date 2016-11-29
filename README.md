@@ -1,5 +1,5 @@
 # UNI :rocket:
-[![version](https://img.shields.io/badge/uni-v.0.0.1-blue.svg)](#)
+[![version](https://img.shields.io/badge/uni-v0.1.0-blue.svg)](#)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
 
 A universal and optimized interface for handle package managers on Linux distributions.
@@ -24,6 +24,12 @@ wget -O upm https://git.io/v1UKq && chmod +x upm && ./upm && rm upm
 ```shell
 wget -O upm https://git.io/v1UKO && chmod +x upm && ./upm && rm upm
 ```
+# Uninstallation
+
+| Command | Alias |
+| --- | --- | --- |
+| `uni remove-me` | `uni rm-me` |
+
 # Example
 
 | Command | Alias | Description |
