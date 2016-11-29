@@ -11,6 +11,8 @@ fi
 
 # Include UNI Upgrade function
 . /usr/share/uni/src/tools/upgrade
+# Include UNI Remove function
+. /usr/share/uni/src/tools/remove
 # Include Update function
 . /usr/share/uni/src/$operating_system/update.sh
 # Include Upgrade function
@@ -25,6 +27,7 @@ while [ "$#" -gt 0 ]; do
     update | u) update;;
     upgrade | up) upgrade;;
     upgrade-me | up-me) upgradeUni;;
+    remove-me | rm-me) removeUni;;
     add | a) repo=$2 add;;
     install | i) package=$2 install;;
     --version | -v) echo 'UNI v'$uni_version;;

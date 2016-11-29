@@ -1,0 +1,11 @@
+#!/bin/bash
+function removeUni {
+  printf "Removing UNI...\n"
+
+  sudo rm -rf /usr/share/uni/
+  sudo rm -f /usr/bin/uni
+
+  printf "UNI was removed with successfully!\n"
+
+  exit 0
+}
