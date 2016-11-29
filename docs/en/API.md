@@ -9,6 +9,7 @@ All commands uses `-y` by default, so you don't need to put it when you typing U
 | Command | Alias | Description |
 | --- | --- | --- |
 | `uni upgrade-me` | `uni up-me`  | Looks for UNI upgrades, if available it will be upgraded. |
+| `uni remove-me` | `uni rm-me`  | Removes UNI from the system. |
 | `uni --version` | `uni -v`  | Shows the current UNI version installed. |
 
 # Package manager abstractions
