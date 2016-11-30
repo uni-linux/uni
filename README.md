@@ -1,9 +1,9 @@
 # UNI :rocket:
-[![version](https://img.shields.io/badge/uni-v0.1.0-blue.svg)](#)
+[![version](https://img.shields.io/badge/uni-v0.2.0-blue.svg)](#)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
 
 A universal and optimized interface for handle package managers on Linux distributions.
- 
+
 UNI is an abstraction layer that allows you to manage different package managers using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
 
 # Why

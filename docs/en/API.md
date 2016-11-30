@@ -1,13 +1,14 @@
 # API
 
-This section shows the commands available at this moment for UNI. You can use them in the same way in all distributions supported by UNI. 
+This section shows the commands available at this moment for UNI. You can use them in the same way in all distributions supported by UNI.
 
-All commands uses `-y` by default, so you don't need to put it when you typing UNI commands. If you want to know what each UNI command do internally you can see it in [here](https://github.com/daltonmenezes/uni/tree/master/src). 
+All commands uses `-y` by default, so you don't need to put it when you typing UNI commands. If you want to know what each UNI command do internally you can see it in [here](https://github.com/daltonmenezes/uni/tree/master/src).
 
 # UNI
 
 | Command | Alias | Description |
 | --- | --- | --- |
+| `uni bake` | `uni b`  | Cooks a given recipe. |
 | `uni upgrade-me` | `uni up-me`  | Looks for UNI upgrades, if available it will be upgraded. |
 | `uni remove-me` | `uni rm-me`  | Removes UNI from the system. |
 | `uni --version` | `uni -v`  | Shows the current UNI version installed. |

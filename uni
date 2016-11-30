@@ -13,6 +13,8 @@ fi
 . /usr/share/uni/src/tools/upgrade
 # Include UNI Remove function
 . /usr/share/uni/src/tools/remove
+# Include Bake function
+. /usr/share/uni/src/tools/bake
 # Include Update function
 . /usr/share/uni/src/$operating_system/update.sh
 # Include Upgrade function
@@ -30,6 +32,7 @@ while [ "$#" -gt 0 ]; do
     remove-me | rm-me) removeUni;;
     add | a) repo=$2 add;;
     install | i) package=$2 install;;
+    bake | b) recipe=$2 bake;;
     --version | -v) echo 'UNI v'$uni_version;;
     *) echo "The '$1' argument doesn't exists. Beep..."; exit 0;;
   esac; shift; shift
