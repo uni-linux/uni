@@ -21,7 +21,7 @@ UNI is an abstraction layer that allows you to manage different package managers
 
 the goal is make an easy interface that abstracts repetitive commands related to package management. Join tasks that require the execution of others without spending time typing one by one. Make it easy to work between different distributions by always using the same UNI commands regardless of the distribution you are using.
 
-# How it works?
+# How it Works?
 
 UNI uses your main package manager to do the things and abstracts the original commands through a simple and universal UNI interface.
 
