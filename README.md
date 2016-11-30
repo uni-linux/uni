@@ -10,8 +10,9 @@ UNI is an abstraction layer that allows you to manage different package managers
 
 - [Goal](#goal)
 - [How it works?](#how-it-works)
-- [Using recipes](#using-recipes)
   - [Example](#example)
+- [Using recipes](#using-recipes)
+  - [Example](#example-1)
 - [Installation](#installation)
 - [Uninstallation](#uninstallation)
 - [Documentation](#documentation)
