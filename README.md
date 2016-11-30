@@ -25,6 +25,8 @@ the goal is make an easy interface that abstracts repetitive commands related to
 
 UNI uses your main package manager to do the things and abstracts the original commands through a simple and universal UNI interface.
 
+## Example
+
 | Command | Alias | Description |
 | --- | --- | --- |
 | `uni upgrade` | `uni up`  | Upgrades deeply the system and remove useless dependencies. |
