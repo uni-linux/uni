@@ -1,5 +1,6 @@
 # UNI :rocket:
 [![version](https://img.shields.io/badge/uni-v0.2.0-blue.svg)](#)
+[![support](https://img.shields.io/badge/support-ubuntu%3A%20apt%20%7C%20fedora%3A%20dnf%20-lightgrey.svg)](#)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
 
 A universal and optimized interface for handle package managers on Linux distributions.
