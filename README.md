@@ -3,9 +3,9 @@
 <img src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/>
 </p>
 
-<br/>
+<br/><br/>
 
-<h1 align="center">UNI :rocket:</h1>
+<h1 align="center">UNI</h1>
 <p align="center">
 A universal and optimized interface for handle package managers on Linux distributions.<br/><br/>
 <a href="#"><img src="https://img.shields.io/badge/uni-v0.2.0-blue.svg" alt="version"/></a>
