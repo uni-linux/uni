@@ -1,11 +1,19 @@
-# UNI :rocket:
+<p align="center">
+<br/><br/>
+<img src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/>
+</p>
+
+<br/>
+
+<h1 align="center">UNI :rocket:</h1>
+<p align="center">
+A universal and optimized interface for handle package managers on Linux distributions.<br/><br/>
 [![version](https://img.shields.io/badge/uni-v0.2.0-blue.svg)](#)
 [![support](https://img.shields.io/badge/support-ubuntu%3A%20apt%20%7C%20fedora%3A%20dnf%20-lightgrey.svg)](#)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/daltonmenezes/uni/blob/master/LICENSE)
+</p>
 
-A universal and optimized interface for handle package managers on Linux distributions.
-
-UNI is an abstraction layer that allows you to manage different package managers using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
+> UNI is an abstraction layer that allows you to manage different package managers using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
 
 # Table of Contents
 
