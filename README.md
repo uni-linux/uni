@@ -15,6 +15,8 @@ A universal and optimized interface for handle package managers on Linux distrib
 
 > UNI is an abstraction layer that allows you to manage different package managers using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
 
+<br/>
+
 # Table of Contents
 
 - [Goal](#goal)
