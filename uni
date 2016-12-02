@@ -5,7 +5,7 @@ operating_system_based=`cat /etc/os-release | grep -oP '(?<=^ID_LIKE=)(.*)'`
 uni_version=`cat /usr/share/uni/version.txt`
 declare -i version_without_dots="${uni_version//'.'}"
 
-if [ "$operating_system_based" == "ubuntu" ]; then
+if [[ "$operating_system_based" == "ubuntu" || "$operating_system" == "deepin" ]]; then
     operating_system='ubuntu'
 fi
 
