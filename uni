@@ -30,10 +30,11 @@ while [ "$#" -gt 0 ]; do
     upgrade | up) upgrade;;
     upgrade-me | up-me) upgradeUni;;
     remove-me | rm-me) removeUni;;
-    add | a) repo=$2 add;;
-    install | i) package=$2 install;;
+    add | a) repo="${@:2}" add;;
+    install | i) package="${@:2}" install;;
     bake | b) recipe=$2 bake;;
     --version | -v) echo 'UNI v'$uni_version;;
     *) echo "The '$1' argument doesn't exists. Beep..."; exit 0;;
-  esac; shift; shift
+  esac;
+  exit 0
 done
