@@ -1,34 +1,36 @@
 #!/bin/bash
 function bake {
-  get_recipe_description=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -P '^[^\|;|\[;|\]]*$' | grep -v '\#\sUsage' | grep -v '\#\sAuthor'`
-  get_recipe_author=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -o -P '(?<=\[).*(?=\])'`
-  is_available_recipe=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
-  cols=`tput cols`
+  for recipe in $recipes; do
+      get_recipe_description=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -P '^[^\|;|\[;|\]]*$' | grep -v '\#\sUsage' | grep -v '\#\sAuthor'`
+      get_recipe_author=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -o -P '(?<=\[).*(?=\])'`
+      is_available_recipe=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
+      cols=`tput cols`
 
-  if [[ ! -z $is_available_recipe ]]; then
+      if [[ ! -z $is_available_recipe ]]; then
 
-      while (( i <= $cols-1 )); do
-            lines+='-'
-      (( i = i + 1 ))
-      done
+          while (( i <= $cols-1 )); do
+                lines+='-'
+          (( i = i + 1 ))
+          done
 
-      header="\n$lines\n"
-      header+="# IT'S TIME TO COOK $recipe!"
-      header+="\n$lines\n\n"
-      header+="$get_recipe_description\n\n"
-      header+="# Author\n\n"
-      header+="$get_recipe_author\n\n$lines\n\n"
+          header="\n$lines\n"
+          header+="# IT'S TIME TO COOK $recipe!"
+          header+="\n$lines\n\n"
+          header+="$get_recipe_description\n\n"
+          header+="# Author\n\n"
+          header+="$get_recipe_author\n\n$lines\n\n"
 
-      printf "$header"
-      printf "Cooking...\n"
-      wget -O uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
-      printf "Eating...\n"
-      chmod +x uni-recipe.sh
-      printf "\n$lines\n\n"
-      . uni-recipe.sh
-      rm -f uni-recipe.sh
-      printf "\n$lines\n\nDone. It was delicious!\n\n"
-  else
-      printf "\nThis recipe doesn't seems to exist.\nPlease, check if you have typed correctly or if it's available for your distribution!\n\n"
-  fi
+          printf "$header"
+          printf "Cooking...\n"
+          wget -O uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
+          printf "Eating...\n"
+          chmod +x uni-recipe.sh
+          printf "\n$lines\n\n"
+          . uni-recipe.sh
+          rm -f uni-recipe.sh
+          printf "\n$lines\n\nDone. It was delicious!\n\n"
+      else
+          printf "\nThis recipe doesn't seems to exist.\nPlease, check if you have typed correctly or if it's available for your distribution!\n\n"
+      fi
+  done
 }
