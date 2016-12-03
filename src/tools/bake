@@ -1,6 +1,7 @@
 #!/bin/bash
 function bake {
-  get_recipe_description=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -P '^[^\|;|]*$' | grep -v '\#\sUsage|\[|\]|(\().*(\))'`
+  get_recipe_description=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -P '^[^\|;|\[;|\]]*$' | grep -v '\#\sUsage' | grep -v '\#\sAuthor'`
+  get_recipe_author=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -o -P '(?<=\[).*(?=\])'`
   is_available_recipe=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
   cols=`tput cols`
 
@@ -11,7 +12,15 @@ function bake {
       (( i = i + 1 ))
       done
 
-      printf "\n$lines\n# IT'S TIME TO COOK $recipe!\n$lines\n\n$get_recipe_description\n\n$lines\n\nCooking...\n"
+      header="\n$lines\n"
+      header+="# IT'S TIME TO COOK $recipe!"
+      header+="\n$lines\n\n"
+      header+="$get_recipe_description\n\n"
+      header+="# Author\n\n"
+      header+="$get_recipe_author\n\n$lines\n\n"
+
+      printf "$header"
+      printf "Cooking...\n"
       wget -O uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
       printf "Eating...\n"
       chmod +x uni-recipe.sh
