@@ -1,8 +1,10 @@
 #!/bin/bash
 function bake {
   for recipe in $recipes; do
-      get_recipe_description=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -P '^[^\|;|\[;|\]]*$' | grep -v '\#\sUsage' | grep -v '\#\sAuthor'`
-      get_recipe_author=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md | grep -o -P '(?<=\[).*(?=\])'`
+      get_recipe_info_from_github=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md`
+      recipe_name=`grep -Po -m 1 '[^\#\s].*$' <<< "$get_recipe_info_from_github"`
+      recipe_description=`grep -P -v '^[\#|\[\>].*$' <<< "$get_recipe_info_from_github"`
+      recipe_author=`grep -o -P '(?<=\[).*(?=\])' <<< "$get_recipe_info_from_github"`
       is_available_recipe=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
       cols=`tput cols`
 
@@ -16,21 +18,22 @@ function bake {
           header="$STYLE_DARK_GRAY\n$lines\n$RESET_STYLE"
           header+="#$STYLE_LIGHT_CYAN IT'S TIME TO COOK $RESET_STYLE$recipe!"
           header+="$STYLE_DARK_GRAY\n$lines\n\n$RESET_STYLE"
-          header+="$get_recipe_description\n\n"
-          header+="$STYLE_CYAN# Author\n\n$RESET_STYLE"
-          header+="$get_recipe_author\n\n$STYLE_DARK_GRAY$lines$RESET_STYLE\n\n"
+          header+="$STYLE_CYAN# $recipe_name\n\n$RESET_STYLE"
+          header+="$recipe_description\n\n"
+          header+="$STYLE_CYAN# Author\n$RESET_STYLE\n"
+          header+="$recipe_author\n\n$STYLE_DARK_GRAY$lines$RESET_STYLE\n\n"
 
           printf "$header"
-          printf "Cooking...\n"
+          printf "${STYLE_YELLOW}Cooking...\n"
           wget -O uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
-          printf "Eating...\n"
+          printf "${STYLE_LIGHT_BLUE}Eating...\n"
           chmod +x uni-recipe.sh
           printf "\n$STYLE_DARK_GRAY$lines$RESET_STYLE\n\n"
           . uni-recipe.sh
           rm -f uni-recipe.sh
           printf "\n$STYLE_DARK_GRAY$lines$STYLE_LIGHT_CYAN\n\nDone. It was delicious!$RESET_STYLE\n\n"
       else
-          printf "\nThis recipe doesn't seems to exist.\nPlease, check if you have typed correctly or if it's available for your distribution!\n\n"
+          printf "\n${STYLE_RED}This recipe doesn't seems to exist.\n${RESET_STYLE}Please, check if you have typed correctly or if it's available for your distribution!\n\n"
       fi
   done
 }
