@@ -3,11 +3,11 @@ function upgradeUni {
   version_from_github=`wget -qO- https://git.io/v1JFY`
   declare -i version_without_dots_from_github="${version_from_github//'.'}"
 
-  printf "Looking for a newest version...\n"
+  printf "\nLooking for a newest version..."
 
   if [ "$version_without_dots" -lt "$version_without_dots_from_github" ]; then
 
-      printf "Yes, there's a new version. \nInstalling v$version_from_github...\n"
+      printf "$STYLE_LIGHT_CYAN\nYes, there's a new version.$RESET_STYLE\nInstalling$STYLE_LIGHT_BLUE$STYLE_BOLD v$version_from_github...\n"
 
       wget -O uni-new https://git.io/v1Jbs -q
       unzip -q uni-new
@@ -16,9 +16,9 @@ function upgradeUni {
       mv uni-master uni
       sudo mv -fu uni /usr/share/
 
-      printf "Done. UNI was upgraded with successfully!\n"
+      printf "Done.$STYLE_LIGHT_GREEN UNI was upgraded with successfully!\n"
   else
-      printf 'UNI is up-to-date!\n'
+      printf "$STYLE_LIGHT_CYAN\nUNI is up-to-date!\n\n"
   fi
   exit 0
 }

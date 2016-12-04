@@ -9,6 +9,8 @@ if [[ "$operating_system_based" == "ubuntu" || "$operating_system" == "deepin" ]
     operating_system='ubuntu'
 fi
 
+# Include UNI Styles
+. /usr/share/uni/src/tools/styles
 # Include UNI Upgrade function
 . /usr/share/uni/src/tools/upgrade
 # Include UNI Remove function
@@ -33,8 +35,8 @@ while [ "$#" -gt 0 ]; do
     add | a) repo="${@:2}" add;;
     install | i) package="${@:2}" install;;
     bake | b) recipes="${@:2}" bake;;
-    --version | -v) echo 'UNI v'$uni_version;;
-    *) echo "The '$1' argument doesn't exists. Beep..."; exit 0;;
+    --version | -v) printf "$STYLE_LIGHT_CYAN\n UNI$STYLE_BOLD v$uni_version\n\n";;
+    *) printf "$STYLE_RED\nThe $RESET_STYLE'$1'$STYLE_RED argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
   exit 0
 done

@@ -13,22 +13,22 @@ function bake {
           (( i = i + 1 ))
           done
 
-          header="\n$lines\n"
-          header+="# IT'S TIME TO COOK $recipe!"
-          header+="\n$lines\n\n"
+          header="$STYLE_DARK_GRAY\n$lines\n$RESET_STYLE"
+          header+="#$STYLE_LIGHT_CYAN IT'S TIME TO COOK $RESET_STYLE$recipe!"
+          header+="$STYLE_DARK_GRAY\n$lines\n\n$RESET_STYLE"
           header+="$get_recipe_description\n\n"
-          header+="# Author\n\n"
-          header+="$get_recipe_author\n\n$lines\n\n"
+          header+="$STYLE_CYAN# Author\n\n$RESET_STYLE"
+          header+="$get_recipe_author\n\n$STYLE_DARK_GRAY$lines$RESET_STYLE\n\n"
 
           printf "$header"
           printf "Cooking...\n"
           wget -O uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
           printf "Eating...\n"
           chmod +x uni-recipe.sh
-          printf "\n$lines\n\n"
+          printf "\n$STYLE_DARK_GRAY$lines$RESET_STYLE\n\n"
           . uni-recipe.sh
           rm -f uni-recipe.sh
-          printf "\n$lines\n\nDone. It was delicious!\n\n"
+          printf "\n$STYLE_DARK_GRAY$lines$STYLE_LIGHT_CYAN\n\nDone. It was delicious!$RESET_STYLE\n\n"
       else
           printf "\nThis recipe doesn't seems to exist.\nPlease, check if you have typed correctly or if it's available for your distribution!\n\n"
       fi
