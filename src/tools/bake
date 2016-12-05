@@ -1,12 +1,15 @@
 #!/bin/bash
 function bake {
   for recipe in $recipes; do
-      get_recipe_info_from_github=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md`
-      recipe_name=`grep -Po -m 1 '[^\#\s].*$' <<< "$get_recipe_info_from_github"`
-      recipe_description=`grep -P -v '^[\#|\[\>].*$' <<< "$get_recipe_info_from_github"`
-      recipe_author=`grep -o -P '(?<=\[).*(?=\])' <<< "$get_recipe_info_from_github"`
+      get_recipe_info_from_github=`wget -O .bake_temp.txt https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md -q`
+      get_recipe_info=`cat .bake_temp.txt`
+      recipe_name=`grep -Po -m 1 '[^\#\s].*$' <<< "$get_recipe_info"`
+      recipe_description=`grep -P -v '^[\#|\[\>].*$' <<< "$get_recipe_info"`
+      recipe_author=`grep -o -P '(?<=\[).*(?=\])' <<< "$get_recipe_info"`
       is_available_recipe=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
       cols=`tput cols`
+
+      rm -f .bake_temp.txt
 
       if [[ ! -z $is_available_recipe ]]; then
 
