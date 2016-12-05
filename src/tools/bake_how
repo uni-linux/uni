@@ -1,0 +1,58 @@
+#!/bin/bash
+function bake_how {
+  for recipe in $recipes; do
+      get_recipe_info_from_github=`wget -O .bake_temp.txt https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/README.md -q`
+      get_recipe_info=`cat .bake_temp.txt`
+      recipe_name=`grep -Po -m 1 '[^\#\s].*$' <<< "$get_recipe_info"`
+      recipe_description=`grep -P -v '^[\#|\[\>].*$' <<< "$get_recipe_info"`
+      recipe_author=`grep -o -P '(?<=\[).*(?=\])' <<< "$get_recipe_info"`
+      get_recipe_raw_from_github=`wget -qO- https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh`
+      cols=`tput cols`
+
+      rm -f .bake_temp.txt
+      
+      if [[ ! -z $get_recipe_raw_from_github ]]; then
+
+          while (( i <= $cols-1 )); do
+                lines+='-'
+          (( i = i + 1 ))
+          done
+
+          header="${STYLE_DARK_GRAY}\n${lines}\n${RESET_STYLE}"
+          header+="#${STYLE_LIGHT_CYAN} INFORMATIONS ABOUT ${RESET_STYLE}${recipe}!"
+          header+="${STYLE_DARK_GRAY}\n${lines}\n\n${RESET_STYLE}"
+          header+="${STYLE_CYAN}# ${recipe_name}\n\n${RESET_STYLE}"
+          header+="$recipe_description\n\n"
+          header+="${STYLE_CYAN}# Author\n${RESET_STYLE}\n"
+          header+="${recipe_author}\n\n${STYLE_DARK_GRAY}${lines}${RESET_STYLE}\n"
+          header+="#${STYLE_LIGHT_CYAN} INTERNALLY THIS RECIPE DOES"
+          header+="${STYLE_DARK_GRAY}\n${lines}\n${RESET_STYLE}"
+          header+="${STYLE_YELLOW}\n${get_recipe_raw_from_github}\n\n${RESET_STYLE}"
+          printf "$header"
+
+          read -r -p "Would you like to cook this recipe? [y/yes] [n/no] [q/quit] " response
+
+          case $response in
+               [yY][eE][sS]|[yY])
+                  header_cook="${STYLE_DARK_GRAY}\n${lines}\n${RESET_STYLE}"
+                  header_cook+="#${STYLE_LIGHT_CYAN} IT'S TIME TO COOK ${RESET_STYLE}${recipe}!"
+                  header_cook+="${STYLE_DARK_GRAY}\n${lines}\n\n${RESET_STYLE}"
+                  printf "$header_cook"
+                  printf "${STYLE_YELLOW}Cooking...\n"
+                  wget -O .uni-recipe.sh https://raw.githubusercontent.com/uni-linux/recipes/master/src/$recipe/$operating_system/recipe.sh -q
+                  printf "${STYLE_LIGHT_BLUE}Eating...\n"
+                  chmod +x .uni-recipe.sh
+                  printf "\n${STYLE_DARK_GRAY}${lines}${RESET_STYLE}\n\n"
+                  . .uni-recipe.sh
+                  rm -f .uni-recipe.sh
+                  printf "\n${STYLE_DARK_GRAY}${lines}${STYLE_LIGHT_CYAN}\n\nDone. It was delicious!${RESET_STYLE}\n\n"
+                  ;;
+               [qQ][uU][iI][tT]|[qQ]) exit 0;;
+               *) shift;;
+          esac
+
+      else
+          printf "\n${STYLE_RED}${recipe} doesn't seems to exist.\n${RESET_STYLE}Please, check if you have typed correctly or if it's available for your distribution!\n\n"
+      fi
+  done
+}
