@@ -8,7 +8,8 @@ All commands uses `-y` by default, so you don't need to put it when you typing U
 
 | Command | Alias | Description |
 | --- | --- | --- |
-| `uni bake` | `uni b`  | Cooks a given recipe. You can find recipes [here](https://github.com/uni-linux/recipes) |
+| `uni bake` | `uni b`  | Cooks one or more given recipes. You can find recipes [here](https://github.com/uni-linux/recipes) |
+| `uni bake how` | |  Shows what one or more recipes does internally before allow to cook it. You can find recipes [here](https://github.com/uni-linux/recipes) |
 | `uni upgrade-me` | `uni up-me`  | Looks for UNI upgrades, if available it will be upgraded. |
 | `uni remove-me` | `uni rm-me`  | Removes UNI from the system. |
 | `uni --version` | `uni -v`  | Shows the current UNI version installed. |
@@ -17,7 +18,7 @@ All commands uses `-y` by default, so you don't need to put it when you typing U
 
 | Command | Alias | Description |
 | --- | --- | --- |
-| `uni add` | `uni a`  | Adds a repository. |
-| `uni install` | `uni i`  | Installs a package. |
+| `uni add` | `uni a`  | Adds one or more repositories. |
+| `uni install` | `uni i`  | Installs one or more packages. |
 | `uni upgrade` | `uni up`  | Upgrades deeply the system and remove useless dependencies. |
 | `uni update` | `uni u`  | Updates the package lists from your repositories. |
