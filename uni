@@ -34,9 +34,18 @@ while [ "$#" -gt 0 ]; do
     remove-me | rm-me) removeUni;;
     add | a) repo="${@:2}" add;;
     install | i) package="${@:2}" install;;
-    bake | b) recipes="${@:2}" bake;;
-    --version | -v) printf "$STYLE_LIGHT_CYAN\n UNI$STYLE_BOLD v$uni_version\n\n";;
-    *) printf "$STYLE_RED\nThe $RESET_STYLE'$1'$STYLE_RED argument doesn't exists. Beep...\n\n"; exit 0;;
+    bake | b)
+          if [ "$2" == "how" ]; then
+              . /usr/share/uni/src/tools/bake_how
+              recipes="${@:3}"
+              bake_how
+          else
+              recipes="${@:2}"
+              bake
+          fi
+          ;;
+    --version | -v) printf "${STYLE_LIGHT_CYAN}\n UNI${STYLE_BOLD} v${uni_version}\n\n";;
+    *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
   exit 0
 done
