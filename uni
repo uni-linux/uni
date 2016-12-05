@@ -11,39 +11,48 @@ fi
 
 # Include UNI Styles
 . /usr/share/uni/src/tools/styles
-# Include UNI Upgrade function
-. /usr/share/uni/src/tools/upgrade
-# Include UNI Remove function
-. /usr/share/uni/src/tools/remove
 # Include Bake function
 . /usr/share/uni/src/tools/bake
-# Include Update function
-. /usr/share/uni/src/$operating_system/update.sh
-# Include Upgrade function
-. /usr/share/uni/src/$operating_system/upgrade.sh
-# Include Add function to add repositories
-. /usr/share/uni/src/$operating_system/add.sh
-# Include Install function
-. /usr/share/uni/src/$operating_system/install.sh
+
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
-    update | u) update;;
-    upgrade | up) upgrade;;
-    upgrade-me | up-me) upgradeUni;;
-    remove-me | rm-me) removeUni;;
-    add | a) repo="${@:2}" add;;
-    install | i) package="${@:2}" install;;
+    update | u)
+        . /usr/share/uni/src/$operating_system/update.sh
+        update
+    ;;
+    upgrade | up)
+        . /usr/share/uni/src/$operating_system/upgrade.sh
+        upgrade
+    ;;
+    upgrade-me | up-me)
+        . /usr/share/uni/src/tools/upgrade
+        upgradeUni
+    ;;
+    remove-me | rm-me)
+        . /usr/share/uni/src/tools/remove
+        removeUni
+    ;;
+    add | a)
+        . /usr/share/uni/src/$operating_system/add.sh
+        repo="${@:2}"
+        add
+    ;;
+    install | i)
+        . /usr/share/uni/src/$operating_system/install.sh
+        package="${@:2}"
+        install
+    ;;
     bake | b)
-          if [ "$2" == "how" ]; then
-              . /usr/share/uni/src/tools/bake_how
-              recipes="${@:3}"
-              bake_how
-          else
-              recipes="${@:2}"
-              bake
-          fi
-          ;;
+        if [ "$2" == "how" ]; then
+            . /usr/share/uni/src/tools/bake_how
+            recipes="${@:3}"
+            bake_how
+        else
+            recipes="${@:2}"
+            bake
+        fi
+    ;;
     --version | -v) printf "${STYLE_LIGHT_CYAN}\n UNI${STYLE_BOLD} v${uni_version}\n\n";;
     *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
