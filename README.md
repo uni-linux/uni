@@ -8,8 +8,8 @@
 <h1 align="center">UNI</h1>
 <p align="center">
 A universal and optimized interface for handle package managers and UNI recipes and automating tasks on them on Linux distributions.<br/><br/>
-<a href="#"><img src="https://img.shields.io/badge/uni-v0.2.1-blue.svg" alt="version"/></a>
-<a href="#"><img src="https://img.shields.io/badge/support-ubuntu%3A%20apt%20%7C%20fedora%3A%20dnf%20-lightgrey.svg" alt="support"/></a>
+<a href="#"><img src="https://img.shields.io/badge/uni-v0.5.0-blue.svg" alt="version"/></a>
+<a href="#"><img src="https://img.shields.io/badge/support-%20apt%20%7C%20dnf%20-lightgrey.svg" alt="support"/></a>
 <a href="https://github.com/daltonmenezes/uni/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/></a>
 </p>
 
