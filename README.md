@@ -57,8 +57,10 @@ This will trigger the following commands on **Fedora**:
 sudo dnf upgrade -y
 sudo dnf autoremove -y
 ```
-# Using Recipes
-
+<h1 align="center">Using Recipes</h1>
+<p align="center">
+<img src="http://i.giphy.com/lQ0laoBYhkxq0.gif" alt="uni bake gif"/>
+</p>
 Now you can use available recipes too or create your owns and publish it [here](https://github.com/uni-linux/recipes). Recipes are bash scripts to do anything. Be it to install programs and resolve dependencies or fix system problems. Anything you want and can do with bash scripts.
 
 ## Example
