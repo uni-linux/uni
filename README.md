@@ -7,7 +7,7 @@
 
 <h1 align="center">UNI</h1>
 <p align="center">
-A universal and optimized interface for handle package managers on Linux distributions.<br/><br/>
+A universal and optimized interface for handle package managers and UNI recipes and automating tasks on them on Linux distributions.<br/><br/>
 <a href="#"><img src="https://img.shields.io/badge/uni-v0.2.1-blue.svg" alt="version"/></a>
 <a href="#"><img src="https://img.shields.io/badge/support-ubuntu%3A%20apt%20%7C%20fedora%3A%20dnf%20-lightgrey.svg" alt="support"/></a>
 <a href="https://github.com/daltonmenezes/uni/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/></a>
@@ -15,7 +15,7 @@ A universal and optimized interface for handle package managers on Linux distrib
 
 <br/>
 
-> UNI is an abstraction layer that allows you to manage different package managers using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
+> UNI is an abstraction layer that allows you to manage different package managers or UNI Recipes using the same UNI commands regardless of the distribution you are using and automates repetitive tasks on them.
 
 <br/>
 
@@ -33,7 +33,7 @@ A universal and optimized interface for handle package managers on Linux distrib
 
 # Goal
 
-The goal is make an easy interface that abstracts repetitive commands related to package management. Join tasks that require the execution of others without spending time typing one by one. Make it easy to work between different distributions by always using the same UNI commands regardless of the distribution you are using.
+Make an easy interface to abstract repetitive commands related to package management. Join tasks that require the execution of others without spending time typing one by one. Make it easy to work between different distributions by always using the same UNI commands regardless of the distribution you are using.
 
 # How it Works?
 
