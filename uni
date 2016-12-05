@@ -33,6 +33,11 @@ while [ "$#" -gt 0 ]; do
         . /usr/share/uni/src/tools/remove
         removeUni
     ;;
+    remove | rm)
+        . /usr/share/uni/src/$operating_system/remove.sh
+        package="${@:2}"
+        remove
+    ;;
     add | a)
         . /usr/share/uni/src/$operating_system/add.sh
         repo="${@:2}"
