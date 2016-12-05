@@ -36,7 +36,7 @@ function bake {
           rm -f uni-recipe.sh
           printf "\n${STYLE_DARK_GRAY}${lines}${STYLE_LIGHT_CYAN}\n\nDone. It was delicious!${RESET_STYLE}\n\n"
       else
-          printf "\n${STYLE_RED}This recipe doesn't seems to exist.\n${RESET_STYLE}Please, check if you have typed correctly or if it's available for your distribution!\n\n"
+          printf "\n${STYLE_RED}${recipe} doesn't seems to exist.\n${RESET_STYLE}Please, check if you have typed correctly or if it's available for your distribution!\n\n"
       fi
   done
 }
