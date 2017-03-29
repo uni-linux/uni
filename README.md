@@ -84,9 +84,9 @@ wget -O upm https://git.io/v1UKO && chmod +x upm && ./upm && rm upm
 ```
 # Uninstallation
 
-| Command | Alias |
+| Command | Alias | Description |
 | --- | --- | --- |
-| `uni remove-me` | `uni rm-me` |
+| `uni remove-me` | `uni rm-me` |  |
 
 # Documentation
 
