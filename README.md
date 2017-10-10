@@ -6,6 +6,7 @@
 <br/><br/>
 
 <h1 align="center">UNI</h1>
+<p align="center"><b>Do More, Write less</b></p>
 <p align="center">
 A universal and optimized interface for handle package managers, UNI recipes and automating tasks on them in Linux distributions.<br/><br/>
 <a href="#"><img src="https://img.shields.io/badge/uni-v0.5.0-blue.svg" alt="version"/></a>
