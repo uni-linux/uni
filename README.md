@@ -2,8 +2,6 @@
 <img src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/>
 </p>
 
-<br/>
-
 <h1 align="center">UNI</h1>
 <p align="center"><b>Do More, Write less</b></p>
 <p align="center">
