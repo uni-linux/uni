@@ -1,5 +1,4 @@
 <p align="center">
-<br/><br/>
 <img src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/>
 </p>
 
