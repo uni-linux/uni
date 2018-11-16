@@ -6,6 +6,7 @@
 <p align="center"><b>Do More, Write less</b></p>
 <p align="center">
 A universal and optimized interface for handle package managers, UNI recipes and automating tasks on them in Linux distributions.<br/><br/>
+<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>    
 <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/donate-green.svg" alt="donate" /></a>
 <a href="#"><img src="https://img.shields.io/badge/uni-v0.5.0-blue.svg" alt="version"/></a>
 <a href="https://github.com/uni-linux/recipes"><img src="https://img.shields.io/badge/get-recipes%20for%20uni-orange.svg" alt="get-recipes"/></a>
