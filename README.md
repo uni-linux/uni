@@ -1,8 +1,7 @@
 <p align="center">
-<img src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/>
+<a href="#logo"><img id="logo" src="https://avatars1.githubusercontent.com/u/24256542?v=3&s=200" alt="UNI logo"/></a>
 </p>
 
-<h1 align="center">UNI</h1>
 <p align="center"><b>Do More, Write less</b></p>
 <p align="center">
 A universal and optimized interface for handle package managers, UNI recipes and automating tasks on them in Linux distributions.<br/><br/>
