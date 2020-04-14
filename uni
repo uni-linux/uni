@@ -17,38 +17,38 @@ fi
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
-    update | u)
+    update | u | --update | -u)
         . /usr/share/uni/src/$operating_system/update.sh
         update
     ;;
-    upgrade | up)
+    upgrade | up | --upgrade | -up)
         . /usr/share/uni/src/$operating_system/upgrade.sh
         upgrade
     ;;
-    upgrade-me | up-me)
+    upgrade-me | up-me | --upgrade-me | -up-me)
         . /usr/share/uni/src/tools/upgrade
         upgradeUni
     ;;
-    remove-me | rm-me)
+    remove-me | rm-me | --remove-me | -rm-me)
         . /usr/share/uni/src/tools/remove
         removeUni
     ;;
-    remove | rm)
+    remove | rm | --remove | -rm)
         . /usr/share/uni/src/$operating_system/remove.sh
         package="${@:2}"
         remove
     ;;
-    add | a)
+    add | a | --add | -a)
         . /usr/share/uni/src/$operating_system/add.sh
         repo="${@:2}"
         add
     ;;
-    install | i)
+    install | i | --install | -i)
         . /usr/share/uni/src/$operating_system/install.sh
         package="${@:2}"
         install
     ;;
-    bake | b)
+    bake | b | --bake | -b)
         if [ "$2" == "how" ]; then
             . /usr/share/uni/src/tools/bake_how
             recipes="${@:3}"
@@ -59,6 +59,34 @@ while [ "$#" -gt 0 ]; do
         fi
     ;;
     --version | -v) printf "${STYLE_LIGHT_CYAN}\n UNI${STYLE_BOLD} v${uni_version}\n\n";;
+    --help | help | -h | h)
+        HELP_INFO="
+${STYLE_LIGHT_CYAN}${STYLE_BOLD}Usage: ${RESET_STYLE}${STYLE_BOLD}uni [OPTIONS]
+
+${STYLE_LIGHT_CYAN}Options:${RESET_STYLE}
+${STYLE_BOLD}  -h, --help${RESET_STYLE}                  Shows available commands
+${STYLE_BOLD}  -v, --version${RESET_STYLE}               Shows the current UNI version installed.
+${STYLE_BOLD}  a, add${RESET_STYLE}                      Adds one or more repositories.
+${STYLE_BOLD}  b, bake ${STYLE_YELLOW}<recipe>${RESET_STYLE}            Cooks one or more given recipes
+${STYLE_BOLD}  b how, bake how ${STYLE_YELLOW}<recipe>${RESET_STYLE}    Shows what one or more recipes does
+${STYLE_BOLD}  i, install ${STYLE_YELLOW}<package>${RESET_STYLE}        Installs one or more packages
+${STYLE_BOLD}  u, update${RESET_STYLE}                   Updates the package lists from your repositories
+${STYLE_BOLD}  up, upgrade${RESET_STYLE}                 Upgrades deeply the system and remove useless dependencies
+${STYLE_BOLD}  up-me, upgrade-me${RESET_STYLE}           Looks for UNI upgrades, if available it will be upgraded
+${STYLE_BOLD}  rm, remove ${STYLE_YELLOW}<package>${RESET_STYLE}        Removes one or more packages
+${STYLE_BOLD}  rm-me, remove-me${RESET_STYLE}            Removes UNI from the system
+
+${STYLE_LIGHT_CYAN}Available Recipes (by Dalton Menezes):${RESET_STYLE}
+${STYLE_YELLOW}  atom-install${RESET_STYLE}                Installs the latest version of Atom Editor
+${STYLE_YELLOW}  telegram-install${RESET_STYLE}            Installs the latest version of Telegram
+${STYLE_YELLOW}  node-install${RESET_STYLE}                Installs the nodejs latest LTS available version and npm
+${STYLE_YELLOW}  yarn-install${RESET_STYLE}                Installs the latest version of Yarn
+${STYLE_YELLOW}  stylishbuntu-theme${RESET_STYLE}          Theme Package
+${STYLE_YELLOW}  nebulosa-theme${RESET_STYLE}              Theme Package
+${STYLE_YELLOW}  mac-theme${RESET_STYLE}                   Theme Package
+
+"
+        printf "${HELP_INFO}";;
     *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
   exit 0
