@@ -66,6 +66,7 @@ ${STYLE_LIGHT_CYAN}${STYLE_BOLD}Usage: ${RESET_STYLE}${STYLE_BOLD}uni [OPTIONS]
 ${STYLE_LIGHT_CYAN}Options:${RESET_STYLE}
 ${STYLE_BOLD}  -h, --help${RESET_STYLE}                  Shows available commands
 ${STYLE_BOLD}  -v, --version${RESET_STYLE}               Shows the current UNI version installed.
+${STYLE_BOLD}  -r, --recipes${RESET_STYLE}               Shows available github recipes.
 ${STYLE_BOLD}  a, add${RESET_STYLE}                      Adds one or more repositories.
 ${STYLE_BOLD}  b, bake ${STYLE_YELLOW}<recipe>${RESET_STYLE}            Cooks one or more given recipes
 ${STYLE_BOLD}  b how, bake how ${STYLE_YELLOW}<recipe>${RESET_STYLE}    Shows what one or more recipes does
@@ -76,17 +77,13 @@ ${STYLE_BOLD}  up-me, upgrade-me${RESET_STYLE}           Looks for UNI upgrades,
 ${STYLE_BOLD}  rm, remove ${STYLE_YELLOW}<package>${RESET_STYLE}        Removes one or more packages
 ${STYLE_BOLD}  rm-me, remove-me${RESET_STYLE}            Removes UNI from the system
 
-${STYLE_LIGHT_CYAN}Available Recipes (by Dalton Menezes):${RESET_STYLE}
-${STYLE_YELLOW}  atom-install${RESET_STYLE}                Installs the latest version of Atom Editor
-${STYLE_YELLOW}  telegram-install${RESET_STYLE}            Installs the latest version of Telegram
-${STYLE_YELLOW}  node-install${RESET_STYLE}                Installs the nodejs latest LTS available version and npm
-${STYLE_YELLOW}  yarn-install${RESET_STYLE}                Installs the latest version of Yarn
-${STYLE_YELLOW}  stylishbuntu-theme${RESET_STYLE}          Theme Package
-${STYLE_YELLOW}  nebulosa-theme${RESET_STYLE}              Theme Package
-${STYLE_YELLOW}  mac-theme${RESET_STYLE}                   Theme Package
-
 "
         printf "${HELP_INFO}";;
+    --recipes | -r)
+        # get README from github
+        RECIPES_URL="https://raw.githubusercontent.com/uni-linux/recipes/master/src/daltonmenezes/README.md"
+        RECIPES_PAGE="$(wget -q -O - ${RECIPES_URL} | sed -e 's/<[^>]*>//g' -e 's/- \[/ \\e[33m /g' -e 's/\]/ \\e[0m /g')"
+        printf "${RECIPES_PAGE}\n\n";;
     *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
   exit 0
