@@ -13,6 +13,8 @@ All commands uses `-y` by default, except `uni remove`, so you don't need to put
 | `uni upgrade-me` | `uni up-me`  | Looks for UNI upgrades, if available it will be upgraded. |
 | `uni remove-me` | `uni rm-me`  | Removes UNI from the system. |
 | `uni --version` | `uni -v`  | Shows the current UNI version installed. |
+| `uni --recipes` | `uni -r`  | Shows available recipes in the UNI GitHub. |
+| `uni --help` | `uni -h`  | Shows available UNI commands and usage. |
 
 # Package manager abstractions
 
