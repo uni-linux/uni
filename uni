@@ -82,7 +82,7 @@ ${STYLE_BOLD}  rm-me, remove-me${RESET_STYLE}            Removes UNI from the sy
     --recipes | -r)
         # get README from github
         RECIPES_URL="https://raw.githubusercontent.com/uni-linux/recipes/master/src/daltonmenezes/README.md"
-        RECIPES_PAGE="$(wget -q -O - ${RECIPES_URL} | sed -e 's/<[^>]*>//g' -e 's/- \[/ \\e[33m /g' -e 's/\]/ \\e[0m /g' -e '/> username: daltonmenezes/,/# My Recipes/c\username:\\e[36m datonmenezes\\n\\n\\e[1mRecipes\\e[0m' -e 's/([^()]*)//g')"
+        RECIPES_PAGE="$(wget -q -O - ${RECIPES_URL} | sed -e 's/<[^>]*>//g' -e 's/- \[/ \\e[33m /g' -e 's/\]/ \\e[0m /g' -e '/> username: daltonmenezes/,/# My Recipes/c\username:\\e[36m daltonmenezes\\n\\n\\e[1mRecipes\\e[0m' -e 's/([^()]*)//g')"
         printf "${RECIPES_PAGE}\n\n";;
     *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
