@@ -5,12 +5,33 @@
 <p align="center"><b>Do More, Write less</b></p>
 <p align="center">
 A universal and optimized interface for handle package managers, UNI recipes and automating tasks on them in Linux distributions.<br/><br/>
-<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>    
-<a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/donate-green.svg" alt="donate" /></a>
-<a href="#"><img src="https://img.shields.io/badge/uni-v0.5.0-blue.svg" alt="version"/></a>
-<a href="https://github.com/uni-linux/recipes"><img src="https://img.shields.io/badge/get-recipes%20for%20uni-orange.svg" alt="get-recipes"/></a>
-<a href="#"><img src="https://img.shields.io/badge/support-%20apt%20%7C%20dnf%20-lightgrey.svg" alt="support"/></a>
-<a href="https://github.com/daltonmenezes/uni/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/></a>
+
+<a href="https://issuehunt.io/r/uni-linux/uni">
+  <img src="https://img.shields.io/badge/fund%20issues%20on-issuehunt-green" alt="fund issues on issuehunt" />
+</a>  
+
+<a href="https://www.patreon.com/daltonmenezes">
+  <img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>    
+
+<a href="https://paypal.me/daltonmenezes">
+  <img src="https://img.shields.io/badge/donate%20-paypal-green.svg" alt="donate on paypal" />
+</a>
+
+<a href="#">
+  <img src="https://img.shields.io/github/v/release/uni-linux/uni?color=blue" alt="version"/>
+</a>
+
+<a href="https://github.com/uni-linux/recipes">
+  <img src="https://img.shields.io/badge/get-recipes%20for%20uni-blueviolet.svg" alt="get-recipes"/>
+</a>
+
+<a href="#">
+  <img src="https://img.shields.io/badge/current%20support-%20apt%20%7C%20dnf%20-lightgrey.svg" alt="current support"/>
+</a>
+
+<a href="https://github.com/daltonmenezes/uni/blob/master/LICENSE">
+  <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
+</a>
 </p>
 
 <br/>
