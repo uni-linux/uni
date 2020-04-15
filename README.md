@@ -68,9 +68,10 @@ Now you can use available recipes too or create your owns and publish it [here](
 
 | Command | Alias | Description |
 | --- | --- | --- |
-| `uni bake daltonmenezes/atom-install` | `uni b daltonmenezes/atom-install`  | Installs the latest version of<br/>Atom Editor from their<br/>official website and resolve<br/>dependency issues. |
+| `uni bake atom-install` | `uni b atom-install`  | Installs the latest version of<br/>Atom Editor from their<br/>official website and resolve<br/>dependency issues. |
 
 [Check here the list of available recipes for usage.](https://github.com/uni-linux/recipes)
+You can also type `uni --recipes` to fetch the current list of recipes from GitHub and display in your terminal.
 
 # Installation
 

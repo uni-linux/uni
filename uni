@@ -17,37 +17,45 @@ fi
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
+    # system updaate
     update | u | --update | -u)
         . /usr/share/uni/src/$operating_system/update.sh
         update
     ;;
+    # system upgrade
     upgrade | up | --upgrade | -up)
         . /usr/share/uni/src/$operating_system/upgrade.sh
         upgrade
     ;;
+    # upgrade UNI
     upgrade-me | up-me | --upgrade-me | -up-me)
         . /usr/share/uni/src/tools/upgrade
         upgradeUni
     ;;
+    # remove UNI
     remove-me | rm-me | --remove-me | -rm-me)
         . /usr/share/uni/src/tools/remove
         removeUni
     ;;
+    # remove a package or recipe
     remove | rm | --remove | -rm)
         . /usr/share/uni/src/$operating_system/remove.sh
         package="${@:2}"
         remove
     ;;
+    # add a repo
     add | a | --add | -a)
         . /usr/share/uni/src/$operating_system/add.sh
         repo="${@:2}"
         add
     ;;
+    # install a package
     install | i | --install | -i)
         . /usr/share/uni/src/$operating_system/install.sh
         package="${@:2}"
         install
     ;;
+    # bake a recipe
     bake | b | --bake | -b)
         if [ "$2" == "how" ]; then
             . /usr/share/uni/src/tools/bake_how
@@ -58,16 +66,24 @@ while [ "$#" -gt 0 ]; do
             bake
         fi
     ;;
+    # check version
     --version | -v) printf "${STYLE_LIGHT_CYAN}\n UNI${STYLE_BOLD} v${uni_version}\n\n";;
+    # get current list of recipes from github
+    --recipes | -r)
+        # get README from github
+        RECIPES_URL="https://raw.githubusercontent.com/uni-linux/recipes/master/src/daltonmenezes/README.md"
+        RECIPES_PAGE="$(wget -q -O - ${RECIPES_URL} | sed -e 's/<[^>]*>//g' -e 's/- \[/ \\e[33m /g' -e 's/\]/ \\e[0m /g' -e '/> username: daltonmenezes/,/# My Recipes/c\username:\\e[36m daltonmenezes\\n\\n\\e[1mRecipes\\e[0m' -e 's/([^()]*)//g')"
+        printf "${RECIPES_PAGE}\n\n";;
+    # display usage info
     --help | help | -h | h)
         HELP_INFO="
 ${STYLE_LIGHT_CYAN}${STYLE_BOLD}Usage: ${RESET_STYLE}${STYLE_BOLD}uni [OPTIONS]
 
 ${STYLE_LIGHT_CYAN}Options:${RESET_STYLE}
 ${STYLE_BOLD}  -h, --help${RESET_STYLE}                  Shows available commands
-${STYLE_BOLD}  -v, --version${RESET_STYLE}               Shows the current UNI version installed.
-${STYLE_BOLD}  -r, --recipes${RESET_STYLE}               Shows available github recipes.
-${STYLE_BOLD}  a, add${RESET_STYLE}                      Adds one or more repositories.
+${STYLE_BOLD}  -v, --version${RESET_STYLE}               Shows the current UNI version installed
+${STYLE_BOLD}  -r, --recipes${RESET_STYLE}               Shows available recipes in the UNI GitHub
+${STYLE_BOLD}  a, add${RESET_STYLE}                      Adds one or more repositories
 ${STYLE_BOLD}  b, bake ${STYLE_YELLOW}<recipe>${RESET_STYLE}            Cooks one or more given recipes
 ${STYLE_BOLD}  b how, bake how ${STYLE_YELLOW}<recipe>${RESET_STYLE}    Shows what one or more recipes does
 ${STYLE_BOLD}  i, install ${STYLE_YELLOW}<package>${RESET_STYLE}        Installs one or more packages
@@ -79,11 +95,7 @@ ${STYLE_BOLD}  rm-me, remove-me${RESET_STYLE}            Removes UNI from the sy
 
 "
         printf "${HELP_INFO}";;
-    --recipes | -r)
-        # get README from github
-        RECIPES_URL="https://raw.githubusercontent.com/uni-linux/recipes/master/src/daltonmenezes/README.md"
-        RECIPES_PAGE="$(wget -q -O - ${RECIPES_URL} | sed -e 's/<[^>]*>//g' -e 's/- \[/ \\e[33m /g' -e 's/\]/ \\e[0m /g' -e '/> username: daltonmenezes/,/# My Recipes/c\username:\\e[36m daltonmenezes\\n\\n\\e[1mRecipes\\e[0m' -e 's/([^()]*)//g')"
-        printf "${RECIPES_PAGE}\n\n";;
+    # unexpected argument
     *) printf "${STYLE_RED}\nThe ${RESET_STYLE}'$1'${STYLE_RED} argument doesn't exists. Beep...\n\n"; exit 0;;
   esac;
   exit 0
