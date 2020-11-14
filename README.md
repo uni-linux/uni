@@ -6,7 +6,7 @@
 <p align="center">
 A universal and optimized interface for handle package managers, UNI recipes and automating tasks on them in Linux distributions.<br/><br/>
 
-<a href="https://issuehunt.io/r/uni-linux/uni">
+<a href="https://issuehunt.io/r/uni-linux/uni?tab=idle">
   <img src="https://img.shields.io/badge/fund%20issues%20on-issuehunt-green" alt="fund issues on issuehunt" />
 </a>  
 
